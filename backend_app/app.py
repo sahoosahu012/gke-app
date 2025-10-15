@@ -5,7 +5,7 @@ import os, json
 app = Flask(__name__)
 CORS(app)
 
-DATA_DIR = os.environ.get("DATA_DIR", "/data")
+DATA_DIR = os.environ.get("DATA_DIR", "/tmp/data")
 DATA_FILE = os.path.join(DATA_DIR, "names.json")
 os.makedirs(DATA_DIR, exist_ok=True)
 if not os.path.exists(DATA_FILE):
@@ -37,3 +37,4 @@ def get_names():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
